@@ -1,0 +1,23 @@
+/**
+ * Created by wangfei on 16/3/30.
+ */
+var divContainer;
+window.onload = function (){
+    divContainer=document.getElementById("divContainer");
+
+    divContainer.ondragover = function (e){
+        e.preventDefault();
+    }
+
+    divContainer.ondrop = function (e){
+        e.preventDefault();
+        var f= e.dataTransfer.files[0];
+
+        var fileReader=new FileReader();
+
+        fileReader.onload= function (e){
+            divContainer.innerHTML = "<img src=\"" +fileReader.result+"\">";
+        }
+        fileReader.readAsDataURL(f);
+    }
+}
