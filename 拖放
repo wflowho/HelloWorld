@@ -1,0 +1,20 @@
+var Div,Img;
+
+window.onload=function (){
+    Div=document.getElementById("div");
+    Img=document.getElementById("img");
+
+    Img.ondragstart=function (e){     //add an event;
+        e.dataTransfer.setData("imfId","img");
+    }
+
+    Div.ondragover=function (e){
+        e.preventDefault();
+    }
+
+    Div.ondrop=function (e){
+        e.preventDefault();
+        var img1=document.getElementById(e.dataTransfer.getData("imfId"))
+        Div.appendChild(img1);
+    }
+}
