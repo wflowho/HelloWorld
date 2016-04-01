@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<video src="video/1.mp4" id="id" style="width: 500px;height: 500px;"></video>
+<button onclick="checkV()">play/pause</button>
+<script>
+    function checkV(){
+        var a=document.getElementById("id");
+        if(a.paused){
+            a.play();
+        }
+        else{
+            a.pause();
+        }
+    }
+</script>
+</body>
+</html>
